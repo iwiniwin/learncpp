@@ -6,8 +6,23 @@ using std::cin;
 using std::cout;
 using std::endl;
 
+void test(){
+    int i = 0;
+    const int v2 = 0; 
+    int v1 = v2;
+    int *p1 = &v1, &r1 = v1;
+    const int *p2 = &v2, *const p3 = &i, &r2 = v2;
+
+    r1 = v2;
+    // p1 = p2;  // error
+    p2 = p1;  
+    // p1 = p3;  // error
+    p2 = p3;
+}
+
 int main()
 {
+    test();
     // int &a = 3; // error：普通引用不能绑定到字面值
     const int &b = 3; // 常量引用可以绑定到非常量的对象，字面值，或者表达式
 
@@ -31,7 +46,7 @@ int main()
     const int *p1; // 指向常量的指针
     // int *const p2; // error：常量指针必须初始化
     // int *const p2 = &i;  // error：p2是指向int，而 i是const int，不允许，如果指向了就可以通过p2修改i了，不正确
-    const int *const p2 = &j; // 合法，int *可以转换为const int *
+    // const int *const p2 = &j; // 合法，int *可以转换为const int *
     int *const p2 = &j;
 
     const int *const p3 = &i;
