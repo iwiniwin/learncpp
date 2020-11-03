@@ -30,7 +30,8 @@ int main()
 
     const int *p1; // 指向常量的指针
     // int *const p2; // error：常量指针必须初始化
-    // int *const p2 = &i;  // error：p2是指向int，而 i是const int，类型不匹配
+    // int *const p2 = &i;  // error：p2是指向int，而 i是const int，不允许，如果指向了就可以通过p2修改i了，不正确
+    const int *const p2 = &j; // 合法，int *可以转换为const int *
     int *const p2 = &j;
 
     const int *const p3 = &i;
