@@ -7,6 +7,7 @@ using std::cout;
 using std::endl;
 
 #include <cctype>
+#include <cstring>
 
 void test(){
     string str("some string, hello world !");
@@ -33,9 +34,34 @@ void test(){
     cout << sss[6] << "vvv" << endl;  // 是一个未定义的值
 }
 
+// C风格字符串
+void test2(){
+    char ca[] = {'a', 'b', 'c', '\0', 'd'};
+    char cb[] = {'a', 'b', 'c', '\0'};
+    cout << std::strlen(ca) << endl;  // 字符串长度3，不包含空字符
+    cout << std::strcmp(ca, cb) << endl;  // 比较两个字符串是否相等，这里是0，表示相等
+    std::strcat(ca, cb);  // 将cb附加到ca之后
+    cout << ca << endl;  // abcabc
+
+    std::strcpy(cb, ca); // 将ca拷贝给cb
+    cout << cb << endl;  // abcabc
+
+    string s = "abcdefg";
+    // char *str = s;  // error : 不能直接将string转换为char *
+    // char *str = s.c_str();  // 不能从const char *转换成char *
+    const char *str = s.c_str();  // c_str()函数返回一个c风格的字符串，即指针，指向一个以空字符结束的字符数组
+    cout << str << endl;  // abcdefg
+    s = "xyz";
+    cout << s.c_str() << endl;  // xyz
+    cout << str << endl;  // xyz
+
+}
+
 int main()
 {
     test();
+    test2();
+
     // 初始化string对象
     string s1;          // 默认初始化，s1是一个空字符串
     string s2 = s1;     // s2是s1的副本，[拷贝初始化]
