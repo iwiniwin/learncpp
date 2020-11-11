@@ -41,6 +41,9 @@ int main(){
     a ++;
     cout << a << " " << bb << " " << c << " " << dd << endl;  // 4 4 3 4 
 
+    int *q = &j;
+    decltype(*q) dq = j;  // dq是引用类型
+
     system("pause");
     return 0;
 }
