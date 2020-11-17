@@ -50,9 +50,19 @@ void test1(){
     cout << *(p1 + 1) << endl;  // 6
 }
 
+// 常量数组
+void test2(){
+    const int array[] = {1, 2, 3};
+    // array[0] = 1;  // error : 常量，不允许修改
+    int array1[] = {4, 5, 6};
+    // array = array1;  // error : 数组不能直接赋值
+    // array1 = array;  // error : 数组不能直接赋值
+}
+
 int main(){
 
     test1();
+    test2();
 
     unsigned cnt = 42;
     constexpr unsigned sz = 42;  // 常量表达式
