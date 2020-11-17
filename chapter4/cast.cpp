@@ -31,9 +31,8 @@ void test1(){
     char *q2 = ca;
     const char *q3 = const_cast<char*>(q2);
     // *q3 = 'f';  // error : 不能修改常量
-    auto q4 = const_cast<char*>(q2);
-    *q4 = 'f';
-    cout << q2 << endl;
+    auto q4 = const_cast<const char*>(q2);
+    // *q4 = 'f';  // error : 不能修改常量
 
     // reinterpret_cast
     int *ip;

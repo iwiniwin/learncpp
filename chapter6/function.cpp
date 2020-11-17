@@ -158,6 +158,34 @@ void test4(){
     test41(2, 55, 44);
 }
 
+
+// 默认实参
+void test50(int a = 2, double c = 3.14){
+
+}
+
+// void test51(int a = 2, double c){  // error : 一旦某个形参被赋予了初始值，它后面所有的形参都必须有默认值
+
+// }
+
+void test5(){
+    test50();
+}
+
+
+// 内联函数
+inline bool eq(){
+
+}
+
+void test6(){
+    cout << __func__ << endl;  // test6
+    cout << __FILE__ << endl;  // G:\Project\learncpp\chapter6\function.cpp
+    cout << __LINE__ << endl;  // 184
+    cout << __TIME__ << endl;  // 18:49:21
+    cout << __DATE__ << endl;  // Nov 17 2020
+}
+
 int main(int argc, char *argv[]){
     cout << "argc = " << argc << endl;
     cout << "argv[0] = " << argv[0] << endl;
@@ -169,6 +197,8 @@ int main(int argc, char *argv[]){
     test2();
     test3();
     test4();
+    test5();
+    test6();
 
     system("pause");
     return 0;
