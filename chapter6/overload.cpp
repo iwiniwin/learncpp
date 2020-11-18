@@ -84,6 +84,28 @@ void test6(){
     sss();  // 输出 4 3 b
 }
 
+void f(int, int){
+
+}
+void f(double, double){
+
+}
+
+void fu(long){}
+void fu(float){}
+
+void test7(){
+    f(3, 3);
+    f(3.14, 3.14);
+    // f(4, 3.14);  // error : 二义性
+
+    // fu(3.14);  // error : 二义性，3.14的类型是double，它既能转换成long也能转换成float
+}
+
+int calc(char*){}
+int calc(const char*){}
+// int calc(char* const){}  // error : 重复定义 与  int calc(char*){}，顶层const不影响传入函数的对象
+ 
 // int main(int argc, char *argv[]){  error : main函数不支持重载
 
 // }
@@ -98,6 +120,7 @@ int main(){
     test4();
     test5();
     test6();
+    test7();
 
 
     system("pause");
