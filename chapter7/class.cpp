@@ -7,6 +7,7 @@ struct Sales_data {
     friend Sales_data add(const Sales_data&, const Sales_data&);
     friend ostream &print(ostream &, const Sales_data&);
     friend istream &read(istream &, Sales_data &);
+    friend istream &f();
 public:
     // 构造函数
     Sales_data() = default;  // 要求编译器生成默认构造函数
@@ -17,6 +18,7 @@ public:
     string isbn() const {  // 直接定义在类内，这里const的作用是修改隐式this指针的类型，使其可以指向常量
         // bookNo = "123";  // error : 无法通过指向常量的指针，修改值
         // avg_price2();  // error : 常量对象，以及常量对象的引用或指针都只能调用常量成员函数
+        // f();  // error : f未定义，read在这里可以用，与read这些不同的是，read有参数Sales_data &，是这个原因？TODO
         return bookNo;
     }  
     string isbn2() {
