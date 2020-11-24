@@ -49,6 +49,12 @@ int main(){
     // 注意没有定义两个迭代器相加的操作
     // auto x = v1.begin() + v1.end();  // error : 未定义该操作
 
+    auto begin = vec.crbegin(), end = vec.crend();  // c表示const迭代，r表示反向迭代
+    while(begin != end){  // 将打印2 1
+        cout << (*begin) << endl;
+        begin ++;
+    }
+
     system("pause");
     return 0;
 }
