@@ -56,6 +56,8 @@ int main(){
     vector<int>::size_type a;
     // vector::size_type b;  // error 
 
+    vector<int&> s;  // error : 无法为int&类型进行内存分配
+
     system("pause");
     return 0;
 }
