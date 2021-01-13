@@ -7,6 +7,7 @@ int main(){
 
     auto i = 0, *p = &i;  // i是整数，p是整型指针
     // auto j = 3, k = 3.14;  // error : j和k的类型不一样
+    auto p2 = p;  // p2是个指针
 
     // auto一般会忽略掉顶层const，同时底层const会保留下来
     const int ci = i, &cr = ci;

@@ -19,7 +19,7 @@ int main(){
     vector<int> ivec3 = ivec;  // 把ivec的元素拷贝给ivec3，注意是拷贝
 
     ivec3[0] = 1;
-    cout << ivec3[0] << " " << ivec[0] << endl;
+    cout << ivec3[0] << " " << ivec[0] << endl;  // 1   33
 
     vector<int> ivec4(10, -1);  // 10个int类型的元素，每个都被初始化为-1
 
@@ -30,7 +30,7 @@ int main(){
     // vector<string> articles4("sss", "ttt");  // error
     vector<string> articles5(articles);
     articles5[0] = "bbb";
-    cout << articles5[0] << " " << articles[0] << endl;
+    cout << articles5[0] << " " << articles[0] << endl;  // bbb a
 
     // 值初始化
     vector<int> ivec5(10);  // 10个元素，每个都初始化为0，直接初始化
@@ -56,7 +56,7 @@ int main(){
     vector<int>::size_type a;
     // vector::size_type b;  // error 
 
-    vector<int&> s;  // error : 无法为int&类型进行内存分配
+    // vector<int&> s;  // error : 无法为int&类型进行内存分配
 
     system("pause");
     return 0;

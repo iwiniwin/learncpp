@@ -79,8 +79,8 @@ void test2(){
     // cout << (*back_iter) << endl;  // error : 输出解引用的值无意义
     *back_iter = 6;  // 赋值时会调用push_back插入元素
     print(veci);  // 1 2 3 4 5 6
-    ++ back_iter;
-    *back_iter = 7;  // 无任何作用的操作
+    ++ back_iter;  // 无任何作用的操作
+    *back_iter = 7;  
     print(veci);  // 1 2 3 4 5 6 7
 
 
@@ -127,7 +127,7 @@ void test3(){
     for(auto e : vec2){
         *out_iter++ = e;  // 输出e，123
         // *out_iter = e;  // 等价于上面的写法
-        // out_iter = e;  // 等价于上面的写法，解引用和递增原酸，可以忽略，实际上它们什么也不做，但仍建议写成第一种样式，更清晰
+        // out_iter = e;  // 等价于上面的写法，解引用和递增运算，可以忽略，实际上它们什么也不做，但仍建议写成第一种样式，更清晰
     }
     cout << endl;
 
