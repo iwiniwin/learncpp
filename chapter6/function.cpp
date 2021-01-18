@@ -74,7 +74,7 @@ void test2(){
 
     A a;
     test23(a);
-    cout << a.a << endl;
+    cout << a.a << endl;  // 输出 8
 
     // test24("vvv");  // error : 不能将字面值赋给普通引用
     test25("vvv");

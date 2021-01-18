@@ -6,10 +6,10 @@ using std::cout;
 using std::endl;
 
 class T {
-    private:
+private:
     int a;
     int b;
-    public:
+public:
     int c;
 };
 
